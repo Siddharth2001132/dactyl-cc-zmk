@@ -3,32 +3,22 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define KDEF         0 // Default layer
-#define KMAC         1 // Mac overlay
-#define KSH          2 // Single Hand layer
-#define KSHM         3 // Single Hand Mirror layer
-#define KLOW         4 // Lower layer
-#define KGAM         5 // Gaming overlay
-#define KSET         6 // Settings layer
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+#define ADJUST  3
 
-// Modifiers
-#define HYPER(key)   LS(LC(LA(LG(key)))) // LSHFT+LCTRL+LALT+LGUI
-#define MEH(key)     LS(LC(LA(key))) // LSHFT+LCTRL+LALT
-#define GC(key)      LG(LC(key)) // LGUI+LCTRL
+#define HYPER(key) LS(LC(LA(LG(key))))
+#define MEH(key)   LS(LC(LA(key)))
 
-// Shortcuts
-#define SP           SPACE
-#define ALTGR        RALT
-
-#define BRI_DN       C_BRIGHTNESS_DEC
-#define BRI_UP       C_BRIGHTNESS_INC
-#define VOL_UP       C_VOLUME_UP
-#define VOL_DN       C_VOLUME_DOWN
+&sl {
+    release-after-ms = <5000>;
+};
 
 
 &kscan0 {
-       debounce-press-ms = <30>;
-       debounce-release-ms = <30>;
+    debounce-press-ms = <30>;
+    debounce-release-ms = <30>;
 };
 
 / {
@@ -65,4 +55,5 @@
             >;
         };
     };
-}
+};
+
